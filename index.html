@@ -1,0 +1,104 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <meta name="theme-color" content="#fff8ed" />
+    <title>小羊找小狮子</title>
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+    <main class="app" aria-live="polite">
+      <section class="screen start-screen is-active" id="startScreen">
+        <div class="sky-decor" aria-hidden="true">
+          <span class="cloud cloud-a"></span>
+          <span class="cloud cloud-b"></span>
+          <span class="moon"></span>
+          <span class="tiny-star star-a">★</span>
+          <span class="tiny-star star-b">★</span>
+        </div>
+
+        <div class="intro">
+          <p class="kicker">私人治愈小空间</p>
+          <h1>《小羊找小狮子》</h1>
+          <p class="subtitle">想我的时候，就来找我。</p>
+        </div>
+
+        <div class="hero-wrap">
+          <img class="avatar sheep-avatar" src="./assets/sheep.png" alt="小羊" />
+          <div class="soft-shadow"></div>
+        </div>
+
+        <button class="primary-btn" id="startBtn" type="button">出发找小狮子</button>
+      </section>
+
+      <section class="screen game-screen" id="gameScreen">
+        <div class="topbar">
+          <div>
+            <p class="mini-label">小羊离小狮子还有多远</p>
+            <div class="progress-track" aria-label="小羊离小狮子的距离进度">
+              <span class="progress-fill" id="progressFill"></span>
+            </div>
+          </div>
+          <strong id="progressText">0%</strong>
+        </div>
+
+        <div class="message-card" id="messageCard">轻轻点一下，小羊就往前走一步。</div>
+
+        <div class="world" id="world">
+          <div class="sky-decor world-decor" aria-hidden="true">
+            <span class="cloud cloud-c"></span>
+            <span class="cloud cloud-d"></span>
+            <span class="moon small"></span>
+          </div>
+
+          <div class="path" aria-hidden="true"></div>
+          <div class="city" aria-hidden="true">
+            <span></span><span></span><span></span><span></span>
+          </div>
+
+          <div class="lion-hint" id="lionHint">
+            <span>小狮子在前面</span>
+            <b>→</b>
+          </div>
+
+          <div class="stars" id="stars" aria-hidden="true"></div>
+
+          <img class="avatar lion-avatar" id="lion" src="./assets/lion.png" alt="小狮子" />
+          <img class="avatar sheep-player" id="sheep" src="./assets/sheep.png" alt="正在找小狮子的小羊" />
+
+          <div class="hug-glow" id="hugGlow" aria-hidden="true"></div>
+          <div class="float-hearts" id="floatHearts" aria-hidden="true"></div>
+        </div>
+
+        <button class="primary-btn walk-btn" id="walkBtn" type="button">向前走一步</button>
+      </section>
+
+      <section class="screen end-screen" id="endScreen">
+        <div class="end-scene">
+          <div class="end-glow" aria-hidden="true"></div>
+          <img class="avatar end-lion" src="./assets/lion.png" alt="小狮子" />
+          <img class="avatar end-sheep" src="./assets/sheep.png" alt="小羊" />
+          <div class="end-hearts" aria-hidden="true">
+            <span>♥</span><span>★</span><span>♥</span><span>★</span>
+          </div>
+        </div>
+
+        <div class="ending-copy">
+          <h2>小羊找到小狮子啦。</h2>
+          <p>今日份想念已送达。</p>
+          <p>不管你在哪里，我都会接住你的想念。</p>
+          <p class="count-text" id="countText"></p>
+          <p class="save-note" id="saveNote" hidden>今天的小羊也被小狮子抱住啦。</p>
+        </div>
+
+        <div class="end-actions">
+          <button class="secondary-btn" id="againBtn" type="button">再抱一次</button>
+          <button class="primary-btn" id="saveBtn" type="button">保存今天的想念</button>
+        </div>
+      </section>
+    </main>
+
+    <script src="./script.js"></script>
+  </body>
+</html>
